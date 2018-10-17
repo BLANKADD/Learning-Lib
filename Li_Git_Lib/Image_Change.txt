@@ -1,0 +1,19 @@
+对于图片的格式转换
+必要的jar包：jai_core.jar以及jai_codec.jar
+本质上来说，所有图片都一样，差别仅在于不同格式对数据流的处理上。
+以PNG转换为BMP为例。
+程序先读入一个PNG图片，将这个图片存储在RenderedOp类型当中。
+设置一个用于输出的数据流。
+设置输出文件的编码格式。
+使用函数，将数据流与输出的格式连接起来，并生成对象。
+使用上一步生成的对象调用编码函数，将输入的数据流转换为所需要的格式并进行输出。
+示例代码如下：
+System.out.println("this function has been used");
+		String inputFile = "C:\\Users\\10276\\Desktop\\test_2.png";  
+		String outputFile = "C:\\Users\\10276\\Desktop\\now1_2.bmp";  
+		RenderedOp src = JAI.create("fileload", inputFile);  //将原数据转换为一个中间态的数据流
+		OutputStream os = new FileOutputStream(outputFile); //输出数据流 
+		BMPEncodeParam param = new BMPEncodeParam();  //BMP编码
+		ImageEncoder enc = ImageCodec.createImageEncoder("BMP", os,param);  
+		enc.encode(src);  
+		os.close();//关闭流
