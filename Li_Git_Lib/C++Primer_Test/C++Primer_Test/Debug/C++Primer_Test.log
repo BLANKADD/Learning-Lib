@@ -1,0 +1,6 @@
+﻿  源.cpp
+c:\users\10276\documents\visual studio 2015\projects\c++primer_test\c++primer_test\源.cpp(25): warning C4101: “a”: 未引用的局部变量
+c:\users\10276\documents\visual studio 2015\projects\c++primer_test\c++primer_test\源.cpp(28): warning C4101: “str1”: 未引用的局部变量
+c:\users\10276\documents\visual studio 2015\projects\c++primer_test\c++primer_test\源.cpp(29): warning C4101: “str2”: 未引用的局部变量
+  C++Primer_Test.vcxproj -> c:\users\10276\documents\visual studio 2015\Projects\C++Primer_Test\Debug\C++Primer_Test.exe
+  C++Primer_Test.vcxproj -> c:\users\10276\documents\visual studio 2015\Projects\C++Primer_Test\Debug\C++Primer_Test.pdb (Full PDB)
