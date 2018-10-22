@@ -55,6 +55,22 @@ struct Patrons {
 	string name;
 	double money;
 };
+struct box {
+	char maker[40];
+	float height;
+	float width;
+	float length;
+	float volume;
+};
+void show_box(box A) {
+	cout << "the maker of box is " << A.maker << endl;
+	cout << "the height of box is " << A.height << endl;
+	cout << "the width of box is " << A.width << endl;
+	cout << "the length of box is " << A.length << endl;
+}
+float set_box(box *A) {
+	return A->volume = A->length*A->height*A->width;
+}
 void Make_Name_message() {
 	Name_Message name;
 	int a;
@@ -286,7 +302,37 @@ void set_Patrons() {
 		ptr_1[num++];
 	}
 }
-void main() {
+
+double get_Sum(double x, double y) {
+	return 2.0*x*y / (x + y);
+}
+
+double set_Glof(float *A,int i) {
+	float *ptr = &A[0];
+	bool insert=true;
+	for(int x=0;x<i;x++){
+	if(!insert){
+		break;
+	}
+	cout << "enter your score " << endl;
+	cin >> *(ptr + x);
+	if (*(ptr + i) == 0) {
+		insert = false;
+	}
+	}
+	return 0;
+}
+void show_Golf(float *A,int i) {
+	int num=0;
+	float *ptr = &A[0];
+	for (int x = 0; x < i; x++) {
+		cout << "the score of you" << endl;
+		cout << A[x]<< endl;
+		num = num + A[x];
+	}
+	cout << "the Sum of your score is " << num << endl;
+}
+int  main() {
 	int choice;
 	cout << "choose the function" << endl;
 	cin >> choice;
@@ -363,4 +409,34 @@ void main() {
 	if (choice == 14) {
 		set_Patrons();
 	}
+	if (choice == 15) {
+		double x,y;
+		cout << "please enter two numbers,0 means over" << endl;
+		cin >> x;
+		if (x != 0) {
+			cout << "second number" << endl;
+			cin >> y;
+			cout<<"the sum of two numbers is: "<<get_Sum(x, y);
+		}
+	}
+	if (choice == 16) {
+		int i;
+		float A[10];
+		float *ptr = &A[0];
+		cout << "please enter your number of score.10 is the most" << endl;
+		set_Glof(&A[0], 10);
+		show_Golf(ptr, 10);
+
+	}
+	if (choice == 17) {
+		box box_1 = {
+			"Harry",
+			12.98,
+			12.77,
+			4.67
+		};
+		show_box(box_1);
+		cout<<"the volume of box is "<<set_box(&box_1);
+	}
+	return 0;
 }
